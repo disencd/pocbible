@@ -26,5 +26,9 @@ class PocBibleTest(unittest.TestCase):
         _number = self.poc_obj.get_chapter_of_books("Joh")
         print("Test get the number of chapters of Book Joh - {}".format(_number))
 
+    def test_read_chapter(self):
+        print("Test read_chapter - John {}".format(10))
+        _str = self.poc_obj.read_chapter("John", 10)
+
 if __name__ == '__main__':
     unittest.main()
