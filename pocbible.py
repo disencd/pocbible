@@ -1,6 +1,7 @@
 import bible
 import constants
 import exceptions
+import utils
 
 class pocbible():
     def __init__(self):
@@ -42,5 +43,25 @@ class pocbible():
             _index = constants.BOOKLIST.index(name)
 
             return constants.CHAPTERSLIST[_index][1]
+        except:
+            raise exceptions.ErrorHandler(name)
+
+    def read_chapter(self, name:str, chapter_num:int) -> str:
+        """
+
+        :param name:
+        :param chapter_num:
+        :return:
+        """
+        try:
+            self._validate_book_name(name)
+
+            _index = constants.BOOKLIST.index(name)
+
+            print("{} index is {}".format(name, _index))
+            utils.getverses(_index, chapter_num)
+
+            return "hiii"
+
         except:
             raise exceptions.ErrorHandler(name)
